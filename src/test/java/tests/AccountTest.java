@@ -61,7 +61,7 @@ public class AccountTest extends BaseTest {
         assertEquals(accountDetailsPage.getFieldValueByNameText("Industry"), account.getIndustry(), "the text doesn't match");
         assertEquals(accountDetailsPage.getFieldValueByNameText("Description"), account.getDescription(), "the text doesn't match");
 
-        accountDetailsPage.deleteAccount();
+
 
 
     }
