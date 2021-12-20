@@ -2,13 +2,14 @@ package tests;
 
 import models.Contact;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class ContactTest extends BaseTest{
+public class ContactTest extends BaseTest {
 
-    @Test
+    @Test(description = "User fills in contact's form and checks that account with entered parameters is created")
     public void contactShouldBeCreated(){
         loginPage
                 .open()

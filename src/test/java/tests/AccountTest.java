@@ -2,6 +2,7 @@ package tests;
 
 import models.Account;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -9,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class AccountTest extends BaseTest {
 
 
-    @Test
+    @Test (description = "User fills in account's form and checks that account with entered parameters is created")
     public void accountShouldBeCreated() {
 
         loginPage
