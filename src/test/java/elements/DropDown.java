@@ -5,8 +5,11 @@ import org.openqa.selenium.WebDriver;
 
 public class DropDown {
 
-    String dropDownLocator = "//div[contains(@class,'modal-body')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//div[@class='uiMenu']";
-    String optionsLocator = "//div[contains(@class,'visible')]//a[text()='%s']";
+    String dropDownLocatorAccount = "//div[contains(@class,'modal-body')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//div[@class='uiMenu']";
+    String optionsLocatorAccount = "//div[contains(@class,'visible')]//a[text()='%s']";
+    String dropDownLocatorContact = "//div[contains(@class,'modal-body')]//label[text()='%s']/ancestor::lightning-picklist//div[contains(@class,'slds-combobox')]//input";
+    String optionsLocatorContact = "//lightning-base-combobox-item//span[text()='%s']";
+
 
 
     WebDriver driver;
@@ -17,10 +20,16 @@ public class DropDown {
         this.label = label;
     }
 
-    public void selectOptions(String option) {
+    public void selectOptionsAccount(String option) {
         System.out.println("Select option '%s' into dropdown with label '%S'");
-        driver.findElement(By.xpath(String.format(dropDownLocator,this.label))).click();
-        driver.findElement(By.xpath(String.format(optionsLocator,option))).click();
+        driver.findElement(By.xpath(String.format(dropDownLocatorAccount,this.label))).click();
+        driver.findElement(By.xpath(String.format(optionsLocatorAccount,option))).click();
 
+    }
+
+    public void selectOptionsContact(String option){
+        System.out.println("Select option '%s' into dropdown with label '%S'");
+        driver.findElement(By.xpath(String.format(dropDownLocatorContact,this.label))).click();
+        driver.findElement(By.xpath(String.format(optionsLocatorContact,option))).click();
     }
 }

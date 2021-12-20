@@ -7,7 +7,8 @@ public class TextArea {
 
     WebDriver driver;
     String label;
-    String textareaLocator = "//div[contains(@class,'textarea')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//textarea";
+    String textareaLocatorAccount = "//div[contains(@class,'textarea')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//textarea";
+    String textareaLocatorContact = "//div[contains(@class,'actionBody')]//label[text()='%s']/ancestor::lightning-textarea//textarea";
 
 
     public TextArea(WebDriver driver, String label) {
@@ -15,9 +16,14 @@ public class TextArea {
         this.label = label;
     }
 
-    public void write(String text){
+    public void writeIntoAccount(String text){
         System.out.printf("Writing text '%s' into textarea with label '%s'\n", text, this.label);
-        driver.findElement(By.xpath(String.format(textareaLocator, this.label))).sendKeys(text);
+        driver.findElement(By.xpath(String.format(textareaLocatorAccount, this.label))).sendKeys(text);
 
+    }
+
+    public void writeIntoContact(String text){
+        System.out.printf("Writing text '%s' into textarea with label '%s'\n", text, this.label);
+        driver.findElement(By.xpath(String.format(textareaLocatorContact, this.label))).sendKeys(text);
     }
 }

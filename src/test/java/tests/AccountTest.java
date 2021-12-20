@@ -23,7 +23,7 @@ public class AccountTest extends BaseTest {
 
         assertTrue(isAccountModalOpen, "Account modal page is not open");
 
-        Account account = new Account("FIRSTNAME SECONDNAME",
+        Account account = new Account("FIRSTNAME",
                 "www.site.com",
                 "222-222-222",
                 "222-222-222",
@@ -43,6 +43,7 @@ public class AccountTest extends BaseTest {
                 "billingStreet",
                 "shippingStreet");
 
+
         boolean isDetailsPageOpen = accountModalPage
                 .create(account)
                 .isPageOpen();
@@ -61,7 +62,7 @@ public class AccountTest extends BaseTest {
         assertEquals(accountDetailsPage.getFieldValueByNameText("Industry"), account.getIndustry(), "the text doesn't match");
         assertEquals(accountDetailsPage.getFieldValueByNameText("Description"), account.getDescription(), "the text doesn't match");
 
-        accountDetailsPage.deleteAccount();
+
 
 
     }

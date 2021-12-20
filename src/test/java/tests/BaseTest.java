@@ -19,6 +19,9 @@ public abstract class BaseTest {
     AccountListPage accountListPage;
     AccountModalPage accountModalPage;
     AccountDetailsPage accountDetailsPage;
+    ContactListPage contactListPage;
+    ContactModalPage contactModelPage;
+    ContactDetailsPage contactDetailsPage;
 
     @BeforeMethod
     public void setUp() {
@@ -32,6 +35,9 @@ public abstract class BaseTest {
         accountListPage = new AccountListPage(driver);
         accountModalPage = new AccountModalPage(driver);
         accountDetailsPage = new AccountDetailsPage(driver);
+        contactListPage = new ContactListPage(driver);
+        contactModelPage = new ContactModalPage(driver);
+        contactDetailsPage = new ContactDetailsPage(driver);
     }
 
 

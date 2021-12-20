@@ -40,15 +40,6 @@ public class AccountDetailsPage extends BasePage{
 
     }
 
-    public AccountListPage deleteAccount(){
-        driver.findElement(By.xpath("//button[@class='slds-button slds-button_icon-border-filled']//lightning-primitive-icon")).click();
-        driver.findElement(By.xpath("//a[@name='Delete']")).click();
-        Alert alert = driver.switchTo().alert();
-        alert.accept();
-        alert.dismiss();
-
-        return new AccountListPage(driver);
-    }
 
 
 
