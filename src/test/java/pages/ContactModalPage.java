@@ -40,6 +40,7 @@ public class ContactModalPage extends BasePage{
         new Input(driver, "Mailing Zip/Postal Code").writeIntoContact(contact.getMailingZipPostalCode());
         new Input(driver, "Mailing Country").writeIntoContact(contact.getMailingCountry());
         new TextArea(driver, "Other Street").writeIntoContact(contact.getOtherStreet());
+        new TextArea(driver,"Description").writeIntoContact(contact.getDescription());
         new Input(driver,"Other City").writeIntoContact(contact.getOtherCity());
         new Input(driver,"Other State/Province").writeIntoContact(contact.getOtherStateProvince());
         new Input(driver,"Other Zip/Postal Code").writeIntoContact(contact.getOtherZipPostalCode());

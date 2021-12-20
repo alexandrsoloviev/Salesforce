@@ -7,7 +7,7 @@ public class DropDown {
 
     String dropDownLocatorAccount = "//div[contains(@class,'modal-body')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//div[@class='uiMenu']";
     String optionsLocatorAccount = "//div[contains(@class,'visible')]//a[text()='%s']";
-    String dropDownLocatorContact = "//div[contains(@class,'modal-body')]//label[text()='%s']/ancestor::lightning-combobox[@class='slds-form-element']//input";
+    String dropDownLocatorContact = "//div[contains(@class,'modal-body')]//label[text()='%s']/ancestor::lightning-picklist//div[contains(@class,'slds-combobox')]//input";
     String optionsLocatorContact = "//lightning-base-combobox-item//span[text()='%s']";
 
 

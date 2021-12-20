@@ -23,7 +23,7 @@ public class AccountTest extends BaseTest {
 
         assertTrue(isAccountModalOpen, "Account modal page is not open");
 
-        Account account = new Account("FIRSTNAME SECONDNAME",
+        Account account = new Account("FIRSTNAME",
                 "www.site.com",
                 "222-222-222",
                 "222-222-222",
@@ -42,6 +42,7 @@ public class AccountTest extends BaseTest {
                 "desc",
                 "billingStreet",
                 "shippingStreet");
+
 
         boolean isDetailsPageOpen = accountModalPage
                 .create(account)

@@ -8,7 +8,7 @@ public class TextArea {
     WebDriver driver;
     String label;
     String textareaLocatorAccount = "//div[contains(@class,'textarea')]//span[text()='%s']/ancestor::div[contains(@class,'uiInput')]//textarea";
-    String textareaLocatorContact = "//div[contains(@class,'slds-form-element')]//label[text()='Other Street']/ancestor::lightning-textarea[contains(@class,'slds-form-element')]//textarea";
+    String textareaLocatorContact = "//div[contains(@class,'actionBody')]//label[text()='%s']/ancestor::lightning-textarea//textarea";
 
 
     public TextArea(WebDriver driver, String label) {
