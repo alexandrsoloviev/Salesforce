@@ -3,6 +3,7 @@ package pages;
 import elements.DropDown;
 import elements.Input;
 import elements.TextArea;
+import io.qameta.allure.Step;
 import models.Account;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +21,7 @@ public class AccountModalPage extends BasePage{
         super(driver);
     }
 
-
+    @Step("Create account")
     public AccountDetailsPage create(Account account) {
 
         new Input(driver, "Account Name").writeIntoAccount(account.getAccountName());
@@ -49,6 +50,7 @@ public class AccountModalPage extends BasePage{
         return clickSave();
     }
 
+    @Step("Click 'SAVE BUTTON' on Account Details page")
     public AccountDetailsPage clickSave(){
         driver.findElement(SAVE_BUTTON).click();
         return new AccountDetailsPage(driver);

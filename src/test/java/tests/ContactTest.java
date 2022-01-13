@@ -1,6 +1,7 @@
 package tests;
 
 import models.Contact;
+import models.ContactFactory;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -13,7 +14,7 @@ public class ContactTest extends BaseTest {
     public void contactShouldBeCreated(){
         loginPage
                 .open()
-                .login("sedoi8990-bseq@force.com", "1234qwer");
+                .login("testsalesforce-vfzt@force.com", "dev123123123");
 
         boolean isContactModalOpen = contactListPage
                 .open()
@@ -22,31 +23,7 @@ public class ContactTest extends BaseTest {
 
         assertTrue(isContactModalOpen, "Contact modal page is not open");
 
-        Contact contact = new Contact("test",
-                "test",
-                "Mr.",
-                "Advertisement",
-                "test",
-                "test",
-                "test",
-                "test@test.test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test",
-                "test");
+        Contact contact = ContactFactory.get();
 
         boolean isDetailsPageOpen = contactModelPage
                 .searchAccounts()
