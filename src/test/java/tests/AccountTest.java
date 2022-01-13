@@ -1,6 +1,7 @@
 package tests;
 
 import models.Account;
+import models.AccountFactory;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -10,12 +11,12 @@ import static org.testng.Assert.assertTrue;
 public class AccountTest extends BaseTest {
 
 
-    @Test (description = "User fills in account's form and checks that account with entered parameters is created")
+    @Test(description = "User fills in account's form and checks that account with entered parameters is created")
     public void accountShouldBeCreated() {
 
         loginPage
                 .open()
-                .login("sedoi8990-bseq@force.com", "1234qwer");
+                .login("testsalesforce-vfzt@force.com", "dev123123123");
 
         boolean isAccountModalOpen = accountListPage
                 .open()
@@ -24,25 +25,7 @@ public class AccountTest extends BaseTest {
 
         assertTrue(isAccountModalOpen, "Account modal page is not open");
 
-        Account account = new Account("FIRSTNAME",
-                "www.site.com",
-                "222-222-222",
-                "222-222-222",
-                "1000",
-                "2000",
-                "city",
-                "state",
-                "sCity",
-                "sState",
-                "11111",
-                "country",
-                "11111",
-                "sCountry",
-                "Analyst",
-                "Apparel",
-                "desc",
-                "billingStreet",
-                "shippingStreet");
+        Account account = AccountFactory.get();
 
 
         boolean isDetailsPageOpen = accountModalPage
@@ -62,8 +45,6 @@ public class AccountTest extends BaseTest {
         assertEquals(accountDetailsPage.getFieldValueByNameText("Type"), account.getType(), "the text doesn't match");
         assertEquals(accountDetailsPage.getFieldValueByNameText("Industry"), account.getIndustry(), "the text doesn't match");
         assertEquals(accountDetailsPage.getFieldValueByNameText("Description"), account.getDescription(), "the text doesn't match");
-
-
 
 
     }

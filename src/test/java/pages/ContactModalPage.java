@@ -3,6 +3,7 @@ package pages;
 import elements.DropDown;
 import elements.Input;
 import elements.TextArea;
+import io.qameta.allure.Step;
 import models.Contact;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +27,7 @@ public class ContactModalPage extends BasePage{
         return isExist(MODAL_TITLE);
     }
 
+    @Step("Create contact")
     public ContactDetailsPage create(Contact contact){
         new Input(driver,"First Name").writeIntoContact(contact.getFirstName());
         new Input(driver,"Last Name").writeIntoContact(contact.getLastName());
@@ -55,14 +57,16 @@ public class ContactModalPage extends BasePage{
         return clickSave();
     }
 
+    @Step("Click 'SAVE' button in Contact Details page")
     public ContactDetailsPage clickSave(){
         driver.findElement(SAVE).click();
         return new ContactDetailsPage(driver);
     }
 
+    @Step("Search account")
     public ContactModalPage searchAccounts(){
        driver.findElement(By.xpath("//div[contains(@class,'modal-body')]//label[text()='Account Name']/ancestor::span//input")).click();
-       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@title='FIRSTNAME SECONDNAME']"))).click();
+       wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@title='Rusty Fender']"))).click();
         return this;
     }
 }
